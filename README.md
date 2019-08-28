@@ -3,7 +3,7 @@ Android中，很常见的功能就是弹框，而弹框又有许多不同的需�
 
 # 用法
 我们首先来看看该项目的效果：
-![PopUpDialog](<https://img-blog.csdnimg.cn/20190828222356300.gif =270x540>)
+<img src="https://github.com/cjfu/PopUpDialog/blob/master/popupdialog.gif" width="270" height="540">
 上述图片中，共展示了四种弹框方式，分别为屏幕左右两端弹出及控件上下方弹出。
 
 好，接下来我们来看看该框架的用法：
