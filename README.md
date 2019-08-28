@@ -2,8 +2,10 @@
 Android中，很常见的功能就是弹框，而弹框又有许多不同的需求，比如视频全屏播放时屏幕四周弹出的控制栏、可以随意拖动的悬浮框、上拉/下拉列表等等。而这各类弹框，都可以用PopUpWindow来实现。接下来就分享一款使用indow实现的弹框Demo（PopUpDialog）。
 
 # 用法
-我们首先来看看该项目的效果：
-<img src="https://github.com/cjfu/PopUpDialog/blob/master/popupdialog.gif" width="270" height="540">
+我们首先来看看该项目的效果：  
+
+<img src="https://github.com/cjfu/PopUpDialog/blob/master/popupdialog.gif" width="270" height="540">  
+
 上述图片中，共展示了四种弹框方式，分别为屏幕左右两端弹出及控件上下方弹出。
 
 好，接下来我们来看看该框架的用法：
