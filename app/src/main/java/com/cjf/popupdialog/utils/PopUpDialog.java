@@ -18,6 +18,7 @@ import com.cjf.popupdialog.popupdialog.R;
 
 public class PopUpDialog {
 
+    public final static int DIALOG_DOWN = 0;          //在依赖View的下方弹出
     public final static int DIALOG_UP = 1;          //在依赖View的上方弹出
     public final static int DIALOG_LEFT = 2;        //在屏幕中间左侧弹出
     public final static int DIALOG_RIGHT = 3;       //在屏幕中间右侧弹出
@@ -121,6 +122,14 @@ public class PopUpDialog {
             return;
         }
         switch (mode) {
+            case DIALOG_DOWN:
+                popupWindow.setTouchable(true);
+                popupWindow.setOutsideTouchable(true);
+                popupWindow.setAnimationStyle(R.style.PopupDown);
+                popupWindow.showAtLocation(rootView, Gravity.NO_GRAVITY, (getViewLocation(clickView)[0]
+                                + clickView.getWidth() / 2) - getPopUpWindowViewSize(popupWindow)[0] / 2,
+                        getViewLocation(clickView)[1] + clickView.getHeight());
+                break;
             case DIALOG_UP:
                 popupWindow.setTouchable(true);
                 popupWindow.setOutsideTouchable(true);

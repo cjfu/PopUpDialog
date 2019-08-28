@@ -13,10 +13,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     PopUpDialog popUpDialog1;
     PopUpDialog popUpDialog2;
     PopUpDialog popUpDialog3;
+    PopUpDialog popUpDialog4;
 
     Button button1;
     Button button2;
     Button button3;
+    Button button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
         //popupdialog初始化，决定了弹框的特性
         popUpDialog1 = new PopUpDialog(R.id.main_layout,
                 R.layout.dialog_layout,
@@ -55,6 +58,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 this);
+        popUpDialog4 = new PopUpDialog(R.id.main_layout,
+                R.layout.dialog_layout,
+                button4,
+                PopUpDialog.DIALOG_DOWN,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                this);
     }
 
     /**
@@ -64,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
 
         popUpDialog1.setOnClickListener(R.id.dialog_button, this);//弹框中若只有一个控件需要绑定事件，可使用该方法绑定
         int[] ids = {R.id.dialog_button};
@@ -93,6 +104,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     popUpDialog3.dismiss();
                 } else {
                     popUpDialog3.showPopUpWindow();
+                }
+                break;
+            case R.id.button4:
+                if (popUpDialog4.isShowing()) {
+                    popUpDialog4.dismiss();
+                } else {
+                    popUpDialog4.showPopUpWindow();
                 }
                 break;
             case R.id.dialog_button:
