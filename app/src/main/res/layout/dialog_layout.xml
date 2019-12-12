@@ -6,10 +6,9 @@
     <Button
         android:id="@+id/dialog_button"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:gravity="center"
         android:padding="10dp"
         android:text="HelloWorld" />
-
 </RelativeLayout>

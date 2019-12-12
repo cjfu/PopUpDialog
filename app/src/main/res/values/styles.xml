@@ -8,25 +8,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- 弹出框动画 -->
-    <style name="PopupLeft">
-        <item name="android:windowEnterAnimation">@anim/pop_left_in</item>
-        <item name="android:windowExitAnimation">@anim/pop_left_out</item>
-    </style>
-
-    <style name="PopupRight">
-        <item name="android:windowEnterAnimation">@anim/pop_right_in</item>
-        <item name="android:windowExitAnimation">@anim/pop_right_out</item>
-    </style>
-
-    <style name="PopupUp">
-        <item name="android:windowEnterAnimation">@anim/pop_up_in</item>
-        <item name="android:windowExitAnimation">@anim/pop_up_out</item>
-    </style>
-
-    <style name="PopupDown">
-        <item name="android:windowEnterAnimation">@anim/pop_down_in</item>
-        <item name="android:windowExitAnimation">@anim/pop_down_out</item>
-    </style>
-
 </resources>

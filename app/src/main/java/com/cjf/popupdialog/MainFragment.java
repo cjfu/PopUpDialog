@@ -1,70 +1,47 @@
-package com.cjf.popupdialog.popupdialog;
+package com.cjf.popupdialog;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.cjf.popupdialog.utils.PopUpDialog;
+public class MainFragment extends Fragment implements View.OnClickListener {
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private PopUpDialog popUpDialog1;
+    private PopUpDialog popUpDialog2;
+    private PopUpDialog popUpDialog3;
+    private PopUpDialog popUpDialog4;
 
-    PopUpDialog popUpDialog1;
-    PopUpDialog popUpDialog2;
-    PopUpDialog popUpDialog3;
-    PopUpDialog popUpDialog4;
+    private Button button1;
+    private Button button2;
+    private Button button3;
+    private Button button4;
 
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initView();
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_main,null);
+        initView(view);
         initListener();
+        return view;
     }
 
     /**
      * 初始化控件
      */
-    private void initView() {
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        //popupdialog初始化，决定了弹框的特性
-        popUpDialog1 = new PopUpDialog(R.id.main_layout,
-                R.layout.dialog_layout,
-                button1,
-                PopUpDialog.DIALOG_LEFT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                this);
-        popUpDialog2 = new PopUpDialog(R.id.main_layout,
-                R.layout.dialog_layout,
-                button2,
-                PopUpDialog.DIALOG_RIGHT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                this);
-        popUpDialog3 = new PopUpDialog(R.id.main_layout,
-                R.layout.dialog_layout,
-                button3,
-                PopUpDialog.DIALOG_UP,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                this);
-        popUpDialog4 = new PopUpDialog(R.id.main_layout,
-                R.layout.dialog_layout,
-                button4,
-                PopUpDialog.DIALOG_DOWN,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                this);
+    private void initView(View view) {
+        button1 = view.findViewById(R.id.button1);
+        button2 = view.findViewById(R.id.button2);
+        button3 = view.findViewById(R.id.button3);
+        button4 = view.findViewById(R.id.button4);
+        popUpDialog1 = new PopUpDialog(R.layout.dialog_layout, getActivity(), PopUpDialog.DIALOG_PARENT_CENTER);
+        popUpDialog2 = new PopUpDialog(R.layout.dialog_layout, getActivity(), PopUpDialog.DIALOG_PARENT_UP);
+        popUpDialog3 = new PopUpDialog(R.layout.dialog_layout, button3, PopUpDialog.DIALOG_LEFT);
+        popUpDialog4 = new PopUpDialog(R.layout.dialog_layout, button4, PopUpDialog.DIALOG_RIGHT);
     }
 
     /**
@@ -83,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.button1:
                 if (popUpDialog1.isShowing()) {
                     popUpDialog1.dismiss();
