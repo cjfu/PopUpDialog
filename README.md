@@ -1,4 +1,18 @@
-[![引用方式](https://jitpack.io/v/cjfu/PopUpDialog.svg)](https://jitpack.io/#cjfu/PopUpDialog)
+[![远程](https://jitpack.io/v/cjfu/PopUpDialog.svg)](https://jitpack.io/#cjfu/PopUpDialog)
+
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.cjfu:PopUpDialog:1.0'
+	}
 
 # 背景
 Android中，很常见的功能就是弹框，而弹框又有许多不同的需求，比如视频全屏播放时屏幕四周弹出的控制栏、可以随意拖动的悬浮框、上拉/下拉列表等等。而这各类弹框，都可以用PopUpWindow来实现。接下来就分享一款使用indow实现的弹框Demo（PopUpDialog）。
